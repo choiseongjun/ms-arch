@@ -112,7 +112,7 @@
     "Spring Boot.OrderSystemApplication.executor": "Run",
     "Spring Boot.PaymentSystemApplication.executor": "Run",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/csj27/IdeaProjects/distribute",
+    "last_opened_file_path": "C:/Users/csj27/IdeaProjects/distribute/goods-system/src/main/java/com/ts/goodssystem",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -133,6 +133,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\csj27\IdeaProjects\distribute\goods-system\src\main\java\com\ts\goodssystem" />
       <recent name="C:\Users\csj27\IdeaProjects\distribute\monitoring-docker" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -231,7 +232,7 @@
       <updated>1747524872999</updated>
       <workItem from="1747524874334" duration="4889000" />
       <workItem from="1747531434966" duration="393000" />
-      <workItem from="1747531852368" duration="6122000" />
+      <workItem from="1747531852368" duration="12571000" />
     </task>
     <servers />
   </component>

@@ -1,16 +1,30 @@
 package com.ts.ordersystem.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.ts.ordersystem.entity.Order;
+import com.ts.ordersystem.service.OrderService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/orders")
+@RequiredArgsConstructor
 public class OrderController {
-
-
-    @GetMapping("/v1/test")
-    public String test() {
-        return "test";
+    
+    private final OrderService orderService;
+    
+    @PostMapping
+    public ResponseEntity<Order> createOrder(
+            @RequestParam Long goodsId,
+            @RequestParam Integer quantity,
+            @RequestParam Long price) {
+        Order order = orderService.createOrder(goodsId, quantity, price);
+        return ResponseEntity.ok(order);
     }
-}
+    
+    @GetMapping("/{id}")
+    public ResponseEntity<Order> getOrder(@PathVariable Long id) {
+        Order order = orderService.getOrder(id);
+        return ResponseEntity.ok(order);
+    }
+} 

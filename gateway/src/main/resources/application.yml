@@ -10,9 +10,9 @@ spring:
         - id: order-service
           uri: lb://ORDER-SERVICE
           predicates:
-            - Path=/order/**
+            - Path=/orders/**
           filters:
-            - RewritePath=/order/(?<segment>.*), /order/$\{segment}
+            - RewritePath=/orders/(?<segment>.*), /orders/$\{segment}
         - id: goods-service
           uri: lb://GOODS-SERVICE
           predicates:

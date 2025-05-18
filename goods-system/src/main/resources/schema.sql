@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS goods (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    price BIGINT NOT NULL,
+    stock INTEGER NOT NULL,
+    description TEXT,
+    version BIGINT NOT NULL DEFAULT 0
+); 

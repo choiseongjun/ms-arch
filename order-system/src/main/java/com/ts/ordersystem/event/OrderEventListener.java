@@ -4,6 +4,7 @@ import com.ts.ordersystem.entity.Order;
 import com.ts.ordersystem.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.event.EventListener;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class OrderEventListener {
     private final OrderRepository orderRepository;
 
-    @KafkaListener(topics = "order-events", groupId = "order-service")
+    @EventListener
     @Transactional
     public void handleOrderEvent(OrderEvent event) {
         log.info("Received order event: {}", event);
@@ -57,5 +58,12 @@ public class OrderEventListener {
             log.error("Error processing order event: {}", event, e);
             throw new RuntimeException("Failed to process order event", e);
         }
+    }
+
+    @KafkaListener(topics = "order-events", groupId = "order-service")
+    @Transactional
+    public void handleKafkaOrderEvent(OrderEvent event) {
+        // Kafka로부터 받은 이벤트도 동일한 로직으로 처리
+        handleOrderEvent(event);
     }
 } 

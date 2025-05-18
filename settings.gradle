@@ -1,1 +1,3 @@
 rootProject.name = 'distribute'
+include 'gateway'
+include 'eureka-server'
